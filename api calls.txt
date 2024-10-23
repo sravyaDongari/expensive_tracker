@@ -1,0 +1,52 @@
+Port: 3306
+password: 181818
+
+1. Base URL
+Since your server is running locally, your base URL will be:
+
+bash
+Copy code
+http://localhost:3000/api
+2. API Endpoints
+With the route definitions in your transactionRoutes.js, here are the endpoints you can access:
+
+Add a new transaction (POST):
+
+URL: http://localhost:3000/api/transactions
+Body (JSON):
+json
+Copy code
+{
+    "type": "income", 
+    "category": "salary", 
+    "amount": 1000, 
+    "date": "2024-10-22", 
+    "description": "Monthly salary"
+}
+Get all transactions (GET):
+
+URL: http://localhost:3000/api/transactions
+Get transaction by ID (GET):
+
+URL: http://localhost:3000/api/transactions/{id}
+Replace {id} with the actual transaction ID you want to retrieve.
+Update a transaction by ID (PUT):
+
+URL: http://localhost:3000/api/transactions/{id}
+Body (JSON):
+json
+Copy code
+{
+    "type": "income", 
+    "category": "bonus", 
+    "amount": 500, 
+    "date": "2024-10-22", 
+    "description": "Annual bonus"
+}
+Delete a transaction by ID (DELETE):
+
+URL: http://localhost:3000/api/transactions/{id}
+Replace {id} with the actual transaction ID you want to delete.
+Get transaction summary (GET):
+
+URL: http://localhost:3000/api/summary
